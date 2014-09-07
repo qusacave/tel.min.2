@@ -6,11 +6,11 @@ var nowMute = true;
 //  照度を色の256段階に変換
 //------------------------------------------------------------------------------
 lx2Rgb = function( lx ) {
-    if(lx > 1000) {
+    if(lx > 1120) {
         return 0;
     }
     else {
-	    rgbValue = 255 - (lx/1000)*255;
+	    rgbValue = 255 - (lx/1120)*255;
 	    return Math.round(rgbValue);
     }
 };

@@ -15,7 +15,20 @@ var pitch = [
     220 * Math.pow( 1.06,11 ),  //  ソ#
     440,                        //  ラ
     440 * Math.pow( 1.06, 1 ),  //  ラ#
-    440 * Math.pow( 1.06, 2 )   //  シ
+    440 * Math.pow( 1.06, 2 ),   //  シ
+    440 * Math.pow( 1.06, 3 ),  //  ド
+    440 * Math.pow( 1.06, 4 ),  //  ド#
+    440 * Math.pow( 1.06, 5 ),  //  レ
+    440 * Math.pow( 1.06, 6 ),  //  レ#
+    440 * Math.pow( 1.06, 7 ),  //  ミ
+    440 * Math.pow( 1.06, 8 ),  //  ファ
+    440 * Math.pow( 1.06, 9 ),  //  ファ#
+    440 * Math.pow( 1.06,10 ),  //  ソ
+    440 * Math.pow( 1.06,11 ),  //  ソ#
+    880,                        //  ラ
+    880 * Math.pow( 1.06, 1 ),  //  ラ#
+    880 * Math.pow( 1.06, 2 ),  //  シ
+    880 * Math.pow( 1.06, 3 )
 ];
 
 var gAudioContext   = new AudioContext();
@@ -36,8 +49,8 @@ gOscillatorNode.start(0);
 //  照度を 20 から 1100 の間におさめる
 //------------------------------------------------------------------------------
 clamp = function( lx ){
-	if( lx > 1100 ) return 1100;
-	else if( lx < 20 ) return 20;
+	if( lx > 1120 ) return 1120;
+	else if( lx < 0 ) return 0;
 	else return lx;
 };
 
@@ -48,7 +61,7 @@ clamp = function( lx ){
 //  lx 明るさ (単位ルクス)
 //------------------------------------------------------------------------------
 changeSound = function( lx ) {
-	var freqs = Math.floor( clamp( lx ) / 100 );
+	var freqs = Math.floor( clamp( lx ) / 80 );
 	gOscillatorNode.frequency.value = pitch[ freqs ];
 };
 
