@@ -1,10 +1,10 @@
 {
     "version"    : "0.15",
-    "name"       : "tel.min",
-    "description": "tel.min",
+    "name"       : "tel.min.2",
+    "description": "tel.min.2",
     "launch_path": "/index.html",
-    "icons" : {"128" : "/resource/icon.png"},
-    "orientation": "portrait-primary",
+    "icons" : {"128" : "/rsrc/icon.png"},
+    "orientation": ["portrait-primary"],
     "developer"  : {
         "name" : "qusacave",
         "url"  : ""
